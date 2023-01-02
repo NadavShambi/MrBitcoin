@@ -1,0 +1,36 @@
+:host {
+    margin-block: 20px 10px;
+    display: grid;
+    place-content: center;
+}
+.contact-filter {
+    width: 400px;
+    position: relative;
+    input {
+        line-height: 2.5em;
+        width: 100%;
+        font-size: 1em;
+        padding-inline-start: 5px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        box-shadow: 0 0 0 1px #5555;
+    }
+    input:focus ~ span,
+    input:active ~ span {
+        display: none;
+    }
+
+    span {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+            height: 1em;
+            filter: contrast(0);
+            cursor: pointer;
+        }
+    }
+}

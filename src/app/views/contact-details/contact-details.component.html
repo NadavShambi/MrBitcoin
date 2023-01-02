@@ -1,0 +1,9 @@
+<section *ngIf="contact" class="contact-details">
+  <section class="user">
+    <img src="https://robohash.org/set_set5/{{ contact.name }}.png" alt="" />
+    <p>name: {{ contact.name }}</p>
+    <p>phone: {{ contact.phone }}</p>
+    <p>email: {{ contact.email }}</p>
+  </section>
+  <a routerLink="/contact">back</a>
+</section>

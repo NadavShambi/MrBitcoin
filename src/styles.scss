@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 0;
+}
+
+ul,
+li {
+    padding: 0;
+}
+
+button,
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+$layoutPadding: 20px;
+
+$narrow-breakpoint: 800px;
+$normal-breakpoint: 1100px;
+$wide-breakpoint: 1600px;
+
+@mixin layoutGTC($max) {
+    grid-template-columns:
+        minmax($layoutPadding, 1fr)
+        minmax(auto, $max)
+        minmax($layoutPadding, 1fr);
+}
+
+@mixin for-narrow-layout {
+    @media (min-width: calc($narrow-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: calc($normal-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: calc($wide-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: $layoutPadding 1fr $layoutPadding;
+    grid-auto-rows: max-content;
+    > * {
+        grid-column: 2;
+    }
+
+    > *.full {
+        grid-column: 1 / -1;
+    }
+
+    > *:not(.full) {
+        // display: grid;
+        // grid-auto-flow: dense;
+        // grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include for-narrow-layout {
+        @include layoutGTC($narrow-breakpoint);
+    }
+
+    @include for-normal-layout {
+        @include layoutGTC($normal-breakpoint);
+    }
+
+    @include for-wide-layout {
+        @include layoutGTC($wide-breakpoint);
+    }
+}

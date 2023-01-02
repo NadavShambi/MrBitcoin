@@ -1,0 +1,4 @@
+<section class="statistics" *ngIf="avgBlockSize && marketPrice">
+  <chart [data]="avgBlockSize" [chartStyle]="style1"></chart>
+  <chart [data]="marketPrice" [chartStyle]="style2"></chart>
+</section>

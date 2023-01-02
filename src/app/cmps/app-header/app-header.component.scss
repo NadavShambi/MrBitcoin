@@ -1,0 +1,22 @@
+header {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 80px;
+        border-bottom: 2px solid #3339;
+        & .active{
+            background-color: #7bc7fdd0;
+            transition: .2s;
+            border-radius: 8px;
+        }
+        img {
+            height: 54px;
+            width: 54px;
+            object-fit: contain;
+            padding: 5px;
+            cursor: pointer;
+            
+        }
+    }
+}

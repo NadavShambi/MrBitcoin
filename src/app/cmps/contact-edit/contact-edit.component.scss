@@ -1,0 +1,59 @@
+.contact-edit {
+    margin-inline: auto;
+    width: clamp(400px, 80vw, 800px);
+    .user-img {
+        height: 100px;
+        border-radius: 50%;
+        background: #ee82ee42;
+    }
+    .actions{
+        display: flex;
+        justify-content: space-between;
+        margin-block: 5px;
+        padding-inline: 5px;
+        align-items: center;
+        *{
+            background-color: transparent;
+            border: none;
+            
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-block-start: 10px;
+            span {
+                width: 50px;
+            }
+            input {
+                flex: 1;
+                padding: 3px 5px;
+                font-size: 18px;
+                border: none;
+                border-left: 2px solid rgb(172, 199, 130);
+                border-bottom: 1px solid #333;
+                outline: none;
+                margin-inline-start: 5px;
+            }
+        }
+        button {
+            margin-block: 20px;
+            border-radius: 2em;
+            padding-block: 5px;
+            width: 60%;
+            margin-inline: auto;
+            border: none;
+            background: #9992;
+            box-shadow: 2px 2px #3338;
+            transition: 0.2s;
+            &:hover {
+                background: #9994;
+                box-shadow: 2px 2px #3339;
+            }
+        }
+    }
+}

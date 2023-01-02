@@ -1,0 +1,12 @@
+<form class="contact-filter" *ngIf="contactFilter">
+  <input
+    [(ngModel)]="contactFilter.term"
+    type="search"
+    name="term"
+    id="term"
+    placeholder="Search a contact"
+    (ngModelChange)="onSetFilter()"
+    #input
+  />
+  <span><img src="../../../assets/img/search.png" alt="" /></span>
+</form>

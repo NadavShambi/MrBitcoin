@@ -1,0 +1,8 @@
+<section class="contacts-list">
+  <contact-preview
+    *ngFor="let contact of contacts"
+    [contact]="contact"
+    (onDelete)="onDelete.emit($event)"
+  ></contact-preview>
+  <img routerLink="/contact/edit" class="add" src="../../../assets/img/plus.png" alt="" />
+</section>

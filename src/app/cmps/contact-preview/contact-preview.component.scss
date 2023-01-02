@@ -1,0 +1,67 @@
+.contact-preview {
+    text-align: center;
+    box-shadow: 1px 1px 7px #3335;
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    img {
+        width: 150px;
+        float: left;
+    }
+
+    .actions {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #3333;
+        box-shadow: 0 -3px 150px rgba(74, 231, 171, 0.788);
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        overflow: hidden;
+    }
+
+    &:hover {
+        .actions {
+            height: 50px;
+        }
+    }
+    button {
+        margin-inline-end: 10px;
+        border: none;
+        transition: 0.2s;
+        border-radius: 4px;
+        box-shadow: 2px 2px #3335;
+        padding: 6px 12px;
+        &.delete{
+            &:hover{
+                background-color: #f87963;
+                color: #eee;
+            }
+        }
+        &.details{
+            &:hover{
+                background-color: #7fc75e;
+                color: #eee;
+            }
+        }
+        &.edit{
+            &:hover{
+                background-color: #d4b252;
+                color: #eee;
+            }
+        }
+        &:active,&:focus{
+        box-shadow: 1px 1px #3335;
+        margin-inline-end: 9px;
+
+        }
+    }
+}

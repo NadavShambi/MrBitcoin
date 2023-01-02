@@ -1,0 +1,15 @@
+<h2>{{ data.name }}</h2>
+<p>
+  Last Update:
+  {{ today | date : "dd/MM/yyyy" }} <span> - </span> {{ today | date : "hh:mm a" }}
+</p>
+<canvas
+  *ngIf="lineChartData"
+  baseChart
+  class="chart"
+  [data]="lineChartData"
+  [options]="lineChartOptions"
+  [type]="lineChartType"
+  (chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"
+></canvas>
