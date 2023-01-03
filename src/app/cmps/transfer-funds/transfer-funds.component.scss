@@ -1,6 +1,37 @@
+:host {
+    box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.164);
+}
 .transfer-funds {
-    text-align: center;
-    padding-block: 20px;
+    height: 200px;
+    width: calc(100% - 108px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-block: 20px 0px;
-    box-shadow: 1px 1px 5px rgb(51 51 51 / 47%);
+    position: relative;
+    input {
+        outline: none;
+        font-size: 1.1em;
+        padding-inline-start: 6px;
+        margin-block-start: 15px;
+        padding-block-end: 2px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #3335;
+        margin-inline: 5px;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        &[type="number"] {
+            -moz-appearance: textfield;
+        }
+    }
+    .ts-btn {
+        position: relative;
+        top: -16px;
+        scale: 0.6;
+    }
 }

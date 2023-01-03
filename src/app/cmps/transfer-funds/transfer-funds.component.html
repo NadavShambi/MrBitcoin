@@ -1,9 +1,9 @@
 <form (submit)="onSubmit()" class="transfer-funds">
-  <label>
-    <span>Amount: </span>
-    <input type="number" [(ngModel)]="amount" name="amount" id="" />
-  </label>
-  <button>Transfer</button>
+  <input
+    type="number"
+    [(ngModel)]="amount"
+    name="amount"
+    placeholder="Transfer amount $"
+  />
+  <transfer-btn class="ts-btn"></transfer-btn>
 </form>
-
-

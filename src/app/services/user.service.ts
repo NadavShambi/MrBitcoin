@@ -11,7 +11,6 @@ export class UserService {
   private KEY: string = 'LoggedInUser';
   public login(user: Contact) {
     const contactId = this.contactService.saveContact(user);
-
     contactId ? localStorage.setItem(this.KEY, contactId) : this.logout();
   }
   public logout() {

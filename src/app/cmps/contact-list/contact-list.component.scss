@@ -5,6 +5,8 @@
     grid-template-columns: repeat(1);
     grid-auto-rows: 150px;
     gap: 25px;
+    height: calc(100vh - 169px);
+    overflow-y: auto;
 
     .add {
         position: fixed;

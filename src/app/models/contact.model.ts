@@ -6,7 +6,7 @@ export class Contact {
     public name: string = '',
     public email: string = '',
     public phone: string = '',
-    public coins: number = 100,
+    public coins: number = 1000,
     public moves: Transfer[] = []
   ) {}
 

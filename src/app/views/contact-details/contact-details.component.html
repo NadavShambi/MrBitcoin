@@ -12,6 +12,7 @@
   </section>
 </section>
 
-<transfer-funds [contact]="contact"></transfer-funds>
+<transfer-funds [contact]="contact" (onTransfer)="onTransfer()">
+</transfer-funds>
 
 <moves-list [moves]="contact.moves"></moves-list>

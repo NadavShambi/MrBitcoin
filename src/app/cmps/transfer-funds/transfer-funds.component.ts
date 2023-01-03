@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact.model';
 import { Transfer } from 'src/app/models/transfer';
@@ -13,14 +20,16 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class TransferFundsComponent implements OnInit {
   @Input() contact: Contact;
+  @Output() onTransfer = new EventEmitter();
   user: Contact;
-  amount!: number;
+  amount: number;
 
   constructor(
     private userService: UserService,
     private contactService: ContactService,
     private utilService: UtilsService,
-    private router: Router
+    private router: Router,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -44,19 +53,19 @@ export class TransferFundsComponent implements OnInit {
     const user = {
       ...this.user,
       coins: coins - amount,
-      moves: [...moves, transfer],
+      moves: [transfer, ...moves],
     };
     const contact = {
       ...this.contact,
       coins: this.contact.coins + amount,
-      moves: [...this.contact.moves, transfer],
+      moves: [transfer, ...this.contact.moves],
     };
 
     this.contactService.saveContact(user);
     this.contactService.saveContact(contact);
-    this.amount = NaN;
     // TODO:FIX IT
-    // this.router.navigateByUrl(`/contact`);
+    this.onTransfer.emit();
+    this.amount = NaN;
   }
 
   getTransfer() {

@@ -1,9 +1,17 @@
-
-<form (ngSubmit)="login()">
-  <h2>Welcome to MrBitcoin</h2>
-  <label>
-    <span>How should we call you ?</span>
-    <input type="text" name="name" [(ngModel)]="name" id="" />
-  </label>
-  <button>login</button>
+<form (ngSubmit)="login()" class="login">
+  <h2>{{ greet | naturalType }}</h2>
+  <div class="late">
+    <label>
+      <span>How should we call you ?</span>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="name"
+        id=""
+        placeholder="Enter your name"
+        autofocus
+      />
+    </label>
+    <cool-btn [txt]="'Login'"></cool-btn>
+  </div>
 </form>

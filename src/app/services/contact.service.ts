@@ -71,7 +71,7 @@ export class ContactService {
   private _updateContact(contact: Contact) {
     //mock the server work
     this._contactsDb = this._contactsDb.map((c) =>
-      contact._id === c._id ? contact : c
+      contact._id === c._id ? contact : { ...c }
     );
     // change the observable data in the service - let all the subscribers know
     this._contacts$.next(this._sort(this._filterLoggedin(this._contactsDb)));

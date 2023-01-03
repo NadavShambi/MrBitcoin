@@ -20,6 +20,10 @@ import { LoginComponent } from './cmps/login/login.component';
 import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.component';
 import { MovesListComponent } from './cmps/moves-list/moves-list.component';
 import { MoveComponent } from './cmps/move/move.component';
+import { CoolBtnComponent } from './cmps/cool-btn/cool-btn.component';
+import { NaturalPipe } from './pipes/natural.pipe';
+import { TransferBtnComponent } from './cmps/transfer-btn/transfer-btn.component';
+import { FilterArrPipe } from './pipes/filter-arr.pipe';
 
 @NgModule({
   declarations: [
@@ -39,11 +43,13 @@ import { MoveComponent } from './cmps/move/move.component';
     TransferFundsComponent,
     MovesListComponent,
     MoveComponent,
+    CoolBtnComponent,
+    NaturalPipe,
+    TransferBtnComponent,
+    FilterArrPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, NgChartsModule, FormsModule],
-  providers: [
-    { provide: NgChartsConfiguration, useValue: { generateColors: false } },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

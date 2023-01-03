@@ -1,0 +1,48 @@
+.login {
+    margin-inline: auto;
+    border-radius: 6px;
+    margin-block: 20px;
+    padding: 10px 20px;
+    text-align: center;
+
+    h2 {
+        font-size: 1.8em;
+        text-shadow: 0 0 18px #3335;
+        text-shadow: 2px 2px #eee, 3px 3px #999;
+        color: #333;
+    }
+
+    label {
+        span {
+            font-size: 1.2em;
+            display: block;
+            margin-block-end: 1em;
+            margin-inline-start: 2px;
+        }
+        input {
+            width: 300px;
+            font-size: 1em;
+            padding: 8px 12px;
+            border: 1.2px solid #9297916b;
+            border-right: transparent;
+            outline: none;
+            position: relative;
+            top: 0.5px;
+        }
+    }
+}
+
+.late {
+    animation: lateIn 1s linear 1s forwards;
+    opacity: 0;
+}
+
+@keyframes lateIn {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}

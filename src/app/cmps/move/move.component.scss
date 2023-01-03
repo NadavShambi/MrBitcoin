@@ -35,6 +35,7 @@
 
         .status::before {
             content: "•";
+            margin-inline-end: 5px;
             color: rgb(99, 216, 53);
             font-size: 16px;
             text-align: center;
