@@ -12,6 +12,9 @@ body {
     margin: 0;
 }
 
+ul{
+    list-style-type: none;
+}
 ul,
 li {
     padding: 0;
@@ -67,11 +70,6 @@ $wide-breakpoint: 1600px;
         grid-column: 1 / -1;
     }
 
-    > *:not(.full) {
-        // display: grid;
-        // grid-auto-flow: dense;
-        // grid-template-columns: repeat(6, 1fr);
-    }
 
     @include for-narrow-layout {
         @include layoutGTC($narrow-breakpoint);

@@ -1,0 +1,43 @@
+.move {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 1px 1px 5px #3337;
+    position: relative;
+    padding-block-start: 1em;
+    margin-block-start: 15px;
+    .user {
+        text-align: center;
+        display: grid;
+        place-content: center;
+        border-bottom: 2px solid #9992;
+
+        img {
+            width: 100px;
+            border-radius: 50%;
+            border: 2px solid #9995;
+            box-shadow: 1px 1px 5px #5555;
+        }
+    }
+
+    .divider {
+        text-align: center;
+        display: grid;
+        place-content: center;
+        border-bottom: 2px solid #9992;
+        img {
+            width: 120px;
+        }
+    }
+    .info {
+        padding: 10px;
+        grid-column: 1 / -1;
+
+        .status::before {
+            content: "•";
+            color: rgb(99, 216, 53);
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+}

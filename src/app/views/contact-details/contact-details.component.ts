@@ -25,16 +25,15 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   ) {}
 
   contact: Contact;
-  neighbors: string[];
 
   subscription: Subscription;
 
   async ngOnInit() {
     this.subscription = this.route.data.subscribe((data) => {
       this.contact = data['contact'];
-      console.log(data);
     });
   }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

@@ -16,6 +16,10 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { FormsModule } from '@angular/forms';
 import { ContactEditComponent } from './cmps/contact-edit/contact-edit.component';
 import { ChartComponent } from './cmps/chart/chart.component';
+import { LoginComponent } from './cmps/login/login.component';
+import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.component';
+import { MovesListComponent } from './cmps/moves-list/moves-list.component';
+import { MoveComponent } from './cmps/move/move.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { ChartComponent } from './cmps/chart/chart.component';
     ContactFilterComponent,
     ContactEditComponent,
     ChartComponent,
+    LoginComponent,
+    TransferFundsComponent,
+    MovesListComponent,
+    MoveComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgChartsModule, FormsModule],
   providers: [

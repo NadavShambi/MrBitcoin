@@ -11,7 +11,7 @@ export class BitcoinService {
     return from(
       fetch('https://blockchain.info/tobtc?currency=USD&value=1').then(
         (response) => response.json()
-      ).catch()
+      )
     );
   }
   public getAvgBlockSize() {

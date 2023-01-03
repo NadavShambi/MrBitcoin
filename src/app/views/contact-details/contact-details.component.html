@@ -1,9 +1,17 @@
 <section *ngIf="contact" class="contact-details">
   <section class="user">
-    <img src="https://robohash.org/set_set5/{{ contact.name }}.png" alt="" />
-    <p>name: {{ contact.name }}</p>
-    <p>phone: {{ contact.phone }}</p>
-    <p>email: {{ contact.email }}</p>
+    <div class="top">
+      <img src="https://robohash.org/set_set5/{{ contact.name }}.png" alt="" />
+      <h2>{{ contact.name }}</h2>
+    </div>
+    <div class="bot">
+      <p>phone: {{ contact.phone }}</p>
+      <p>email: {{ contact.email }}</p>
+      <a routerLink="/contact">back</a>
+    </div>
   </section>
-  <a routerLink="/contact">back</a>
 </section>
+
+<transfer-funds [contact]="contact"></transfer-funds>
+
+<moves-list [moves]="contact.moves"></moves-list>

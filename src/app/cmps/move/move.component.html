@@ -1,0 +1,24 @@
+<section class="move">
+  <div class="user">
+    <img src="https://robohash.org/set_set5/{{ move.from }}.png" alt="" />
+    <p>{{ move.from }}</p>
+  </div>
+
+  <div class="divider">
+    <img
+      src="https://res.cloudinary.com/dafrgmbsw/image/upload/v1672759622/pngwing.com_1_rdjnkr.png"
+      alt=""
+    />
+  </div>
+
+  <div class="user">
+    <img src="https://robohash.org/set_set5/{{ move.to }}.png" alt="" />
+    <p>{{ move.to }}</p>
+  </div>
+
+  <div class="info">
+      <p>{{ move.from }} transferred {{ move.amount | currency }} to {{ move.to }}</p>
+      <p class="date">At {{ move.at | date : "dd/MM/yy , h:mm a" }}</p>
+      <p class="status">status: Approved</p>
+  </div>
+</section>

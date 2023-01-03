@@ -15,7 +15,6 @@ export class ContactIndexComponent implements OnInit, OnDestroy {
     private userMsgService: UserMsgService
   ) {}
 
-  contacts: Contact[];
   contacts$: Observable<Contact[]>;
   subscription!: Subscription;
 

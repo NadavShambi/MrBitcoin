@@ -1,3 +1,5 @@
+import { Transfer } from "./transfer";
+
 export class Contact {
   constructor(
     public _id?: string,
@@ -5,7 +7,7 @@ export class Contact {
     public email: string = '',
     public phone: string = '',
     public coins: number = 100,
-    public moves: string[] = []
+    public moves: Transfer[] = []
   ) {}
 
   setId?(id: string = 'r101') {

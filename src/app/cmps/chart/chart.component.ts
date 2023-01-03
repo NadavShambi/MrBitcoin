@@ -44,7 +44,6 @@ export class ChartComponent implements OnInit, OnDestroy {
     };
 
     this.lineChartData = chartData;
-    console.log('this.lineChartData:', this.lineChartData);
   }
 
   startTimer() {

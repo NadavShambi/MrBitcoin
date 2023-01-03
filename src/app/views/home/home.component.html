@@ -1,13 +1,24 @@
 <section class="home" *ngIf="contact">
   <article class="logged-user">
-    <h2>Hello {{ contact.name }}!</h2>
+    <div class="top">
+      <img src="https://robohash.org/set_set5/{{ contact.name }}.png" alt="" />
+      <h2>{{ contact.name }}</h2>
+    </div>
     <div class="info-line">
-      <img src="https://res.cloudinary.com/dafrgmbsw/image/upload/v1672689076/coins_tv6ql3.png" alt="" />
+      <img
+        src="https://res.cloudinary.com/dafrgmbsw/image/upload/v1672689076/coins_tv6ql3.png"
+        alt=""
+      />
       <span>Coins: {{ contact.coins | currency }}</span>
     </div>
     <div class="info-line">
-      <img src="https://res.cloudinary.com/dafrgmbsw/image/upload/v1672689076/bitcoin_ul1suc.png" alt="" />
+      <img
+        src="https://res.cloudinary.com/dafrgmbsw/image/upload/v1672689076/bitcoin_ul1suc.png"
+        alt=""
+      />
       <span>BTC: {{ contact.coins * rate }}</span>
     </div>
   </article>
+  <button (click)="onLogout()">logout</button>
 </section>
+<moves-list [moves]="contact.moves"></moves-list>
