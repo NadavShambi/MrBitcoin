@@ -29,6 +29,6 @@ export class ContactIndexComponent implements OnInit, OnDestroy {
 
   onDeleteContact(contactId: string) {
     this.contactService.deleteContact(contactId);
-    this.userMsgService.setMsg(`contact ${contactId} removed!`);
+    this.userMsgService.setMsg(`contact removed!`);
   }
 }

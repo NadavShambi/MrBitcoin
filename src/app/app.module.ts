@@ -24,7 +24,6 @@ import { CoolBtnComponent } from './cmps/cool-btn/cool-btn.component';
 import { NaturalPipe } from './pipes/natural.pipe';
 import { TransferBtnComponent } from './cmps/transfer-btn/transfer-btn.component';
 import { FilterArrPipe } from './pipes/filter-arr.pipe';
-
 @NgModule({
   declarations: [
     AppComponent,

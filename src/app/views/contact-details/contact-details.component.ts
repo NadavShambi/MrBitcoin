@@ -1,18 +1,10 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  OnDestroy,
-  Output,
-  EventEmitter,
-  ChangeDetectorRef,
-} from '@angular/core';
-import { lastValueFrom, Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
-import { UserService } from 'src/app/services/user.service';
+import { UserMsgService } from 'src/app/services/user-msg.service';
 
 @Component({
   selector: 'contact-details',
@@ -22,10 +14,8 @@ import { UserService } from 'src/app/services/user.service';
 export class ContactDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private contactService: ContactService,
-    private userService: UserService,
-    private router: Router,
     private route: ActivatedRoute,
-    private cd: ChangeDetectorRef
+    private userMsgService: UserMsgService
   ) {}
 
   contact: Contact;
@@ -41,9 +31,11 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   onTransfer() {
     const id = this.contact._id;
     if (!id) return;
-    this.contactService
-      .getContactById(id)
-      .subscribe(({ moves }) => (this.contact.moves = moves));
+    this.contactService.getContactById(id).subscribe(({ moves }) => {
+      this.contact.moves = moves;
+
+      this.userMsgService.setMsg('Transfer Approved');
+    });
   }
 
   ngOnDestroy(): void {

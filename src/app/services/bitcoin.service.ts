@@ -17,14 +17,14 @@ export class BitcoinService {
   public getAvgBlockSize() {
     return from(
       fetch(
-        'https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true'
+        'https://api.blockchain.info/charts/market-price?timespan=3months&format=json&cors=true'
       ).then((response) => response.json())
     );
   }
   public getMarketPrice() {
     return from(
       fetch(
-        'https://api.blockchain.info/charts/n-transactions?timespan=5months&format=json&cors=true'
+        'https://api.blockchain.info/charts/n-transactions?timespan=3months&format=json&cors=true'
       ).then((response) => response.json())
     );
   }

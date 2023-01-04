@@ -18,15 +18,57 @@
         }
     }
 
-    .bot{
+    .bot {
         position: relative;
-        p{
-            margin-block-end: 0;
+        div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-block-start: 12px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
         }
-        a{
+        p {
+            margin-block: 0;
+        }
+        a {
             position: absolute;
             right: 0;
             bottom: 0;
         }
     }
+}
+
+a {
+    padding: 4px 16px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid rgb(221, 140, 126);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    box-shadow: 1px 1px 25px 10px rgba(230, 214, 211, 0.5);
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(228, 213, 210, 0.5), transparent);
+    transition: 0.65s;
+}
+
+.btn:hover:before {
+    left: 100%;
 }

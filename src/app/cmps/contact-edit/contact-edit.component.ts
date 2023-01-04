@@ -40,6 +40,9 @@ export class ContactEditComponent implements OnInit {
     console.log('this.contact:', this.contact);
     this.contactService.saveContact(this.contact);
     this.router.navigateByUrl('/contact');
+    this.contact._id
+      ? this.userMsgService.setMsg(` ${this.contact.name} Saved!`)
+      : this.userMsgService.setMsg(` ${this.contact.name} Added!`);
   }
 
   onDeleteContact(contactId: string) {
